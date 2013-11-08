@@ -6,10 +6,11 @@ Rails_Ecomm_Project
 
 <img src="http://www.rrc.mb.ca/images/new_home_page_images/rrc_logo.png">
 
-== Description of Contents
+Description of Contents
+======================
 
 The default directory structure of a generated Ruby on Rails application:
-
+<pre>
   |-- app
   |   |-- assets
   |   |   |-- images
@@ -47,7 +48,7 @@ The default directory structure of a generated Ruby on Rails application:
       |   |-- javascripts
       |   `-- stylesheets
       `-- plugins
-
+</pre>
 app
   Holds all the code that's specific to this particular application.
 
