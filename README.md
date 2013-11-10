@@ -136,6 +136,10 @@ Change Log
 ==========
 <pre>
 11.10.2013 - Added Database and model associations
+           - Added Active Admin
+           - Set up initil routes
+           - Began Active Admin setup
+           
 11.07.2013 - Added Initial Rails Files
 </pre>
 
