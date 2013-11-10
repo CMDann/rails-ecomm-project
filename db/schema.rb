@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131110190741) do
+ActiveRecord::Schema.define(:version => 20131110193421) do
 
   create_table "customers", :force => true do |t|
     t.string   "first_name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20131110190741) do
     t.string   "email"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "province_id"
   end
 
   create_table "line_items", :force => true do |t|
@@ -29,6 +30,8 @@ ActiveRecord::Schema.define(:version => 20131110190741) do
     t.decimal  "price"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "order_id"
+    t.integer  "product_id"
   end
 
   create_table "orders", :force => true do |t|
@@ -36,8 +39,9 @@ ActiveRecord::Schema.define(:version => 20131110190741) do
     t.decimal  "pst_rate"
     t.decimal  "gst_rate"
     t.decimal  "hst_rate"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "customer_id"
   end
 
   create_table "products", :force => true do |t|
@@ -61,8 +65,10 @@ ActiveRecord::Schema.define(:version => 20131110190741) do
   create_table "reviews", :force => true do |t|
     t.string   "content"
     t.decimal  "rating"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "customer_id"
+    t.integer  "product_id"
   end
 
 end
