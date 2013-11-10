@@ -1,0 +1,2 @@
+/Users/Dann/.rbenv/versions/2.0.0-p247/bin/ruby extconf.rb 
+/Users/Dann/.rbenv/versions/2.0.0-p247/bin/ruby: invalid option -3  (-h will show valid options) (RuntimeError)
