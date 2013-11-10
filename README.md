@@ -119,7 +119,8 @@ vendor
 
 Change Log
 ==========
-
+<pre>
+11.10.2013 - Added Database and model associations
 11.07.2013 - Added Initial Rails Files
-<br />
+</pre>
 
