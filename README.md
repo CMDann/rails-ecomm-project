@@ -135,6 +135,10 @@ vendor
 Change Log
 ==========
 <pre>
+11.11.2013 - Added products to active admin
+           - Added missing foreign keys and category option to products
+           - Added validations to the models
+
 11.10.2013 - Added Database and model associations
            - Added Active Admin
            - Set up initil routes
