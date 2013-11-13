@@ -1,6 +1,6 @@
 class LineItem < ActiveRecord::Base
   belongs_to :order
-  belongs_to :products
+  belongs_to :product
 
   validates :price,    :presence => true
   validates :quantity, :presence => true
