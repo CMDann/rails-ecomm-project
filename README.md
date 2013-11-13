@@ -135,6 +135,10 @@ vendor
 Change Log
 ==========
 <pre>
+11.13.2013 - Fixed associations between products and lineitems
+           - Fixed adding and updating products on the back end of the site
+           - Added product categories
+           
 11.11.2013 - Added products to active admin
            - Added missing foreign keys and category option to products
            - Added validations to the models
