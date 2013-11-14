@@ -135,6 +135,10 @@ vendor
 Change Log
 ==========
 <pre>
+11.14.2013 - Added Reviews, Provinces, Orders, and Customers to admin panel.
+           - Changed currency to dollars
+           - Fixed protected variables error in db models
+           
 11.13.2013 - Fixed associations between products and lineitems
            - Fixed adding and updating products on the back end of the site
            - Added product categories
