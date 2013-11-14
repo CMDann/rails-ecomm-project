@@ -5,5 +5,5 @@ class Review < ActiveRecord::Base
   validates :content, :presence => true
   validates :rating,  :presence => true
 
-  attr_accessible :content, :rating
+  attr_accessible :content, :rating, :product_id, :customer_id
 end
