@@ -1,7 +1,11 @@
 RailsEcommProject::Application.routes.draw do
   get "home/index"
 
-  root :to => "home#index"
+  # Index of the site
+  root :to => "home#index", :via => :get
+
+  # Route to product pages
+  match 'home/:id' => 'home#show', :as => :store_product, :via => :get
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
