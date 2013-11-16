@@ -10,7 +10,9 @@ class Customer < ActiveRecord::Base
   validates :city,       :presence => true
   validates :email,      :presence => true
   validates :postal_code,:presence => true
-  validates :province_id,:presence => true
+  
+  validates :province_id,:presence => true,
+                         :numericality => true
 
   attr_accessible :address, :city, :email, :first_name, :last_name, :postal_code, :province_id
 end
