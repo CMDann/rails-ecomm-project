@@ -1,0 +1,7 @@
+<section class="product">
+	<h2><%= link_to product.name, store_product_path(product) %></h2>
+	<div class="description">
+		<%= product.description %>
+	</div>
+	<p><%= number_to_currency product.price %></p>
+</section>
