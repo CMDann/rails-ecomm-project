@@ -164,6 +164,12 @@ vendor
 Change Log
 ==========
 <pre>
+11.15.2013 - Added categories model
+           - Removed category from product and replaced with category_id
+           - Added categories to active admin
+           - Added associations to categories
+           - Added missing validations
+           
 11.14.2013 - Added Reviews, Provinces, Orders, and Customers to admin panel.
            - Changed currency to dollars
            - Fixed protected variables error in db models
