@@ -26,6 +26,7 @@ gem "jquery-rails", "< 3.0.0"
 gem 'activeadmin'
 gem 'activemerchant'
 gem 'will_paginate', '~> 3.0'
+gem "scoped_search"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

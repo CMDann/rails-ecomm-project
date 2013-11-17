@@ -7,6 +7,9 @@ RailsEcommProject::Application.routes.draw do
   # Route to product pages
   match 'home/:id' => 'home#show', :as => :store_product, :via => :get
 
+  #Route to search pages
+  match '/search/:query' => 'search#search', :as => 'search'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
