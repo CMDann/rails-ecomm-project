@@ -13,7 +13,7 @@ class Product < ActiveRecord::Base
                              
   # validates :category,       :presence => true
 
-  attr_accessible :description, :name, :price, :stock_quantity, :category_id
+  attr_accessible :description, :name, :price, :stock_quantity, :category_id, :image_file_name
 
   # Scoped_Search requires you set the search variables here
   scoped_search :on => [:name, :description, :price]
