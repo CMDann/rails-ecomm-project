@@ -164,6 +164,9 @@ vendor
 Change Log
 ==========
 <pre>
+11.18.2013 - Added image support
+           - Configured Active Admin to work with paperclip
+
 11.15.2013 - Added categories model
            - Removed category from product and replaced with category_id
            - Added categories to active admin
