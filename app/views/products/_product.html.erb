@@ -1,0 +1,15 @@
+<section class="product">
+	<h2><%= link_to product.name, store_product_path(product) %></h2>
+	<div class="description">
+		<%= product.description %>
+	</div>
+	<% if product.image_file_name %>
+		<p><%= image_tag product.image_file_name %></p>
+	<% end %>
+
+	<% if product.category %>
+		<strong>Category:</strong> <%= product.category.title %>
+	<% end %>
+
+	<p><%= number_to_currency product.price %></p>
+</section>

@@ -1,12 +1,5 @@
 <h1>Wacky Games and Retro Toys</h1>
 <p><%= link_to 'Admin', admin_dashboard_path %></p>
 
-<% @products.each do |product| %>
-	<section class="product">
-		<h2><%= link_to product.name, store_product_path(product) %></h2>
-		<div class="description">
-			<%= product.description %>
-		</div>
-		<p><%= number_to_currency product.price %></p>
-	</section>
-<% end %>
+<%= render @products %>
+

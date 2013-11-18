@@ -1,12 +1,7 @@
 <h1>Product</h1>
-<section class="product">
-	<h2><%= link_to @product.name, store_product_path(@product) %></h2>
-	<div class="description">
-		<%= @product.description %>
-	</div>
-	<p><%= number_to_currency @product.price %></p>
-</section>
+
+<%= render @product %>
 
 <p>
-	<%= link_to 'Home', root_path %>
+        <%= link_to 'Home', root_path %>
 </p>

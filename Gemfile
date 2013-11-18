@@ -25,7 +25,7 @@ end
 gem "jquery-rails", "< 3.0.0"
 gem 'activeadmin'
 gem 'activemerchant'
-gem 'will_paginate', '~> 3.0'
+# gem 'will_paginate', "3.0.pre2" # Active Admin Requires a specific will_paginate gem
 gem "scoped_search"
 
 # To use ActiveModel has_secure_password
