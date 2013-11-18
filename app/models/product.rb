@@ -13,8 +13,10 @@ class Product < ActiveRecord::Base
                              
   # validates :category,       :presence => true
 
-  attr_accessible :description, :name, :price, :stock_quantity, :category_id, :image_file_name
+  attr_accessible :description, :name, :price, :stock_quantity, :category_id, :image
 
   # Scoped_Search requires you set the search variables here
   scoped_search :on => [:name, :description, :price]
+
+  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
 end
