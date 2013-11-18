@@ -18,7 +18,7 @@ ActiveAdmin.register Product do
       f.input :category
       f.input :price
       f.input :stock_quantity
-      f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url(:medium))
+      f.input :image, :as => :file
     end                               
     f.actions                         
   end 

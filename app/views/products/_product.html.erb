@@ -3,9 +3,9 @@
 	<div class="description">
 		<%= product.description %>
 	</div>
-	<!-- <% if product.image_file_name %>
-		<p><%= image_tag product.image_file_name %></p>
-	<% end %> -->
+	<% if product.image_file_name %>
+		<p><%= image_tag product.image %></p>
+	<% end %>
 
 	<% if product.category %>
 		<strong>Category:</strong> <%= product.category.title %>
