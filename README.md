@@ -164,6 +164,12 @@ vendor
 Change Log
 ==========
 <pre>
+11.21.2013 - Added search functionality to the site
+           - Added bootstrap css framework
+           - Implemented bootstrap styles
+           - Added SQL injection prevention
+           - Added better search functionality
+
 11.18.2013 - Added image support
            - Configured Active Admin to work with paperclip
 
