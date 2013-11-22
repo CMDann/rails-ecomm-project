@@ -29,6 +29,7 @@ gem 'activemerchant'
 gem "paperclip", "~> 3.0"
 #gem "cocaine", "= 0.3.2" # Paperyclip was having an error - suggested fix
 gem "scoped_search"
+gem 'haml-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -89,6 +89,13 @@ GEM
     formtastic (2.2.1)
       actionpack (>= 3.0)
     fssm (0.2.10)
+    haml (4.0.4)
+      tilt
+    haml-rails (0.4)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (>= 3.1, < 4.1)
+      railties (>= 3.1, < 4.1)
     has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
@@ -195,6 +202,7 @@ DEPENDENCIES
   activemerchant
   coffee-rails (~> 3.2.1)
   compass
+  haml-rails
   jquery-rails (< 3.0.0)
   meta_search (>= 1.1.0.pre)
   paperclip (~> 3.0)
