@@ -12,6 +12,6 @@ class HomeController < ApplicationController
   end
 
   def search_results
-    @products = Product.where(:name => params[:keywords])
+    @products = Product.where("name LIKE ?", "%#{params[:keywords]}%")
   end
 end
