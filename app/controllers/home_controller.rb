@@ -15,4 +15,8 @@ class HomeController < ApplicationController
   def search_results
     @products = Product.where("name LIKE ?", "%#{params[:keywords]}%")
   end
+
+  def page # Find a specific page based on the id sent
+    @page = Page.find(params[:id])
+  end
 end
