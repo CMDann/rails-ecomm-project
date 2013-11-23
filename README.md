@@ -164,6 +164,10 @@ vendor
 Change Log
 ==========
 <pre>
+11.22.2013 - Added basic SASS styles to the site
+           - Added boostrap theme to the framework
+           - Added product reviews to product pages
+
 11.21.2013 - Added search functionality to the site
            - Added bootstrap css framework
            - Implemented bootstrap styles
