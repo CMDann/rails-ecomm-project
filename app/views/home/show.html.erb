@@ -4,7 +4,9 @@
 	<div class="product_body">
 		
 		<% if @product.category %>
-			<strong>Category:</strong> <%= @product.category.title %>
+			<div>
+				<strong>Category:</strong> <%= @product.category.title %>
+			</div>
 		<% end %>
 		<p><%= number_to_currency @product.price %></p>
 
@@ -16,7 +18,28 @@
 
 	<% if @product.image_file_name %>
 		<div class="product_image">
-			<%= image_tag @product.image, :width => "400", :height => "400"  %>
+			<%= image_tag @product.image, :width => "400", :height => "400" %>
 		</div>
 	<% end %>
+	<div class="reviews">
+		<h2>Reviews</h2>
+		<% if @reviews.empty? %>
+			<div class="alert alert-dismissable alert-danger">
+				<p>No reviews yet..</p>
+			</div>
+		<% end %>
+
+		<% @reviews.each do |review| %>
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title"><%= review.customer.first_name %> <%= review.customer.last_name %></h3>
+			</div>
+
+			<div class="panel-body">
+				<p>Rating: <%= review.rating %> /5</p>
+				<p><%= review.content %>
+			</div>
+		</div>
+		<% end %>
+	</div>
 </div>
