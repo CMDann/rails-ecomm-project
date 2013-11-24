@@ -1,7 +1,8 @@
 class SearchController < ApplicationController
 
-  def search #Define the search query here
-    @Products = Product.search_for(params[:query])
+  def category # Load products of a specific category
+    @category = Category.find(params[:id])
+    @products = Product.where(:category_id => params[:id])
   end
 
 end

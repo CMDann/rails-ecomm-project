@@ -10,7 +10,8 @@ RailsEcommProject::Application.routes.draw do
   match 'home/:id' => 'home#show', :as => :store_product, :via => :get
 
   # Route to pages
-  match 'page/:id' => 'home#page', :as => 'page', :via => :get
+  match 'page/:id'     => 'home#page',       :as => 'page',     :via => :get
+  match 'search/:id'   => 'search#category', :as => 'category', :via => :get
 
   # On Sale
   match 'sale' => 'home#sale', :as => 'sale', :via => :get
@@ -18,6 +19,7 @@ RailsEcommProject::Application.routes.draw do
   # Search routes
   match 'search'         => 'home#search',         :as => 'search',         :via => :get
   match 'search_results' => 'home#search_results', :as => 'search_results', :via => :post
+
 
 
   devise_for :admin_users, ActiveAdmin::Devise.config
