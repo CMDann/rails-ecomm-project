@@ -1,4 +1,4 @@
-<%= form_tag search_results_path do %>
-	<%= text_field_tag :keywords, 'Enter your search query here', class: "form-control" %>
+<%= form_tag search_results_path :class => 'form-inline' do %>
+	<%= text_field_tag :keywords, 'Enter your search query here', class: "form-inline" %>
 	<%= submit_tag 'Search', class: "btn btn-success" %>
 <% end %>

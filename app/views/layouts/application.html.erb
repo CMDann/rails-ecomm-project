@@ -6,12 +6,14 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<div class="container">
-  <div class="row row-offcanvas row-offcanvas-right">
-  	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
+ <body>
+    <!-- Some poorly placed logic -->
+
+    <% categories = Category.all %>
+    <% pages = Page.all %>
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
@@ -24,38 +26,55 @@
             <ul class="nav navbar-nav">
                 <li><%= link_to 'Home', root_path %></li>
                 <li><%= link_to 'On Sale!', sale_path %></li>
-                <!-- Temporary Hard Coded Links -->
-                <li><a href="http://localhost:3000/page/1">About</a></li>
-                <li><a href="http://localhost:3000/page/2">Contact</a></li>
+                <!-- Links to pages created on the back end -->
+                <% pages.each do |page| %>
+                  <li><%= link_to page.title , page_path(:id => page.id) %></li>
+                <% end %>
+                <!-- Alerts and notices -->
+                <li class="notice"><%= notice %></li>
+                <li class="alert"><%= alert %></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <!-- Link to admin section -->
                 <li><%= link_to 'Admin', admin_dashboard_path %></li>
               </ul>
           </div><!--/.nav-collapse -->
+      </div><!-- /.container -->
+    </div> <!-- /.navbar -->
+
+      <div class="col-xs-6 col-sm-3 sidebar-offcanvas categories" id="sidebar" role="navigation">
+        <div class="list-group">
+          <a href="#" class="list-group-item active">Categories</a>
+          <%= link_to 'On Sale!', sale_path, :class=>"list-group-item" %>
+          <% categories.each do |category| %>
+            <%= link_to category.title , category_path(:id => category.id), :class=>"list-group-item" %>
+          <% end %>
         </div>
-      </div>
+      </div><!--/span-->
 
-  	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="container">
 
+      <div class="row row-offcanvas row-offcanvas-right">
 
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
 
-    <%= render 'search' %>
-    
+          <%= render 'search' %>
+  
+          <%= yield %>
+          
+        </div><!--/span-->
+      </div><!--/row-->
 
-  <%= yield %>
+      <hr>
 
-<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-  <div class="list-group">
-    
-  </div>
-</div><!--/span-->
+      <footer>
+        <p>&copy; Company 2013</p>
+      </footer>
 
-    
+    </div><!--/.container-->
 
-  </div> 
-</div> <!-- /container -->
-
-</body>
+    </body>
 </html>
