@@ -11,7 +11,7 @@
 		
 		<% if @product.category %>
 			<div>
-				<strong>Category:</strong> <%= link_to @product.category.title, category_path , params.merge({:id => @product.category.id}) %>
+				<strong>Category:</strong> <%= link_to @product.category.title, category_path(:id => @product.category.id) %>
 			</div>
 		<% end %>
 
