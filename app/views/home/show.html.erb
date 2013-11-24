@@ -8,7 +8,12 @@
 				<strong>Category:</strong> <%= @product.category.title %>
 			</div>
 		<% end %>
-		<p><%= number_to_currency @product.price %></p>
+
+		<% if @product.sale_price then %>
+			<p><span class="salePrice"><%= number_to_currency @product.sale_price %></span> <span class="oldPrice"><%= number_to_currency @product.price %></s></p>
+		<% else %>
+			<p><%= number_to_currency @product.price %></p>
+		<% end %>
 
 		<div class="description">
 			<p><%= @product.description %></p>
@@ -21,6 +26,8 @@
 			<%= image_tag @product.image, :width => "400", :height => "400" %>
 		</div>
 	<% end %>
+
+
 	<div class="reviews">
 		<h2>Reviews</h2>
 		<% if @reviews.empty? %>

@@ -19,4 +19,8 @@ class HomeController < ApplicationController
   def page # Find a specific page based on the id sent
     @page = Page.find(params[:id])
   end
+
+  def sale # Find products that are on sale
+    @products = Product.where("sale_price IS NOT NULL")
+  end
 end

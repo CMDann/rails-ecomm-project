@@ -8,6 +8,11 @@ ActiveAdmin.register Product do
         number_to_currency product.price, :unit => "&dollar;"
       end
     end
+    column :sale_price, :sortable => :sale_price do |product|
+      div :class => "Sale Price" do
+        number_to_currency product.sale_price, :unit => "&dollar;"
+      end
+    end
     default_actions
   end
 
@@ -17,6 +22,7 @@ ActiveAdmin.register Product do
       f.input :description               
       f.input :category
       f.input :price
+      f.input :sale_price
       f.input :stock_quantity
       f.input :image, :as => :file
     end                               

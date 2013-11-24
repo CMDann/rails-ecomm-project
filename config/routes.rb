@@ -12,6 +12,9 @@ RailsEcommProject::Application.routes.draw do
   # Route to pages
   match 'page/:id' => 'home#page', :as => 'page', :via => :get
 
+  # On Sale
+  match 'sale' => 'home#sale', :as => 'sale', :via => :get
+
   # Search routes
   match 'search'         => 'home#search',         :as => 'search',         :via => :get
   match 'search_results' => 'home#search_results', :as => 'search_results', :via => :post
