@@ -1,6 +1,9 @@
 <div class="customer col-md-4 panel panel-primary">
 	<section class="product">
 		<div class="panel-heading">
+			<% if product.sale_price %>
+				<p><span class="label label-success sale-icon">On Sale!</span></p>
+			<% end %>
 			<h2><%= link_to product.name, store_product_path(product) %></h2>
 		</div>
 

@@ -2,6 +2,9 @@
 	<h1><%= @product.name %></h1>
 
 	<div class="product_body">
+		<% if @product.sale_price %>
+			<p><span class="label label-success sale-icon">On Sale!</span></p>
+		<% end %>
 		
 		<% if @product.category %>
 			<div>
@@ -31,8 +34,8 @@
 	<div class="reviews">
 		<h2>Reviews</h2>
 		<% if @reviews.empty? %>
-			<div class="alert alert-dismissable alert-danger">
-				<p>No reviews yet..</p>
+			<div>
+				<p><span class="label label-primary no-reviews">No reviews yet..</span></p>
 			</div>
 		<% end %>
 

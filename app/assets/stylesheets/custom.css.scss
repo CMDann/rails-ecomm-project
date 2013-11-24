@@ -19,6 +19,16 @@
 		h2{
 			text-align: center;
 		}
+
+		P{
+
+			margin: 0px auto;
+			width: 130px;
+
+			.no-reviews{
+			text-align: center;
+			}
+		}
 	}
 }
 
@@ -30,4 +40,8 @@
 .salePrice{
 	font-weight: bold;
 	color: #FA0C0C;
+}
+
+.sale-icon{
+	float: right;
 }
