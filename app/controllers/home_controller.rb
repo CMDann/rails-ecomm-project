@@ -13,7 +13,7 @@ class HomeController < ApplicationController
   end
 
   def search_results
-    @products = Product.where("name LIKE ?", "%#{params[:keywords]}%").page(params[:page]).per(9)
+    @products = Product.where("name LIKE ? OR description LIKE ?", "%#{params[:keywords]}%", "%#{params[:keywords]}%").page(params[:page]).per(9)
   end
 
   def page # Find a specific page based on the id sent

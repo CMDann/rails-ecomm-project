@@ -170,6 +170,7 @@ Change Log
            - Added categories dynamically to category nav bar
            - Added pagination to index page
            - Added pagination to search results and categories
+           - Search now looks at product title and description
 
 11.23.2013 - Added page model to the database
            - Added page resource to active admin

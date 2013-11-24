@@ -20,7 +20,7 @@
 			<% end %>
 
 			<% if product.sale_price then %>
-				<p><span class="salePrice"><%= number_to_currency product.sale_price %></span> <span class="oldPrice"><%= number_to_currency product.price %></s></p>
+				<p><span class="salePrice"><%= number_to_currency product.sale_price %></span> <span class="oldPrice"><%= number_to_currency product.price %></span></p>
 			<% else %>
 				<p><%= number_to_currency product.price %></p>
 			<% end %>
