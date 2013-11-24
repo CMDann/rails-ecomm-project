@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
-  def index
-    @products = Product.order(:name)
+  def index # 
+    @products   = Product.order(:name)
+    # @category = Category.all
   end # Load the app/views/home/index
 
   def show

@@ -1,5 +1,14 @@
 <h2><%= @category.title %></h2>
 <p><%= @category.description %></p>
 
+<% if @products.empty? %>
+	<div class="jumbotron">
+        <h1>No products are in this category!</h1>
+        <p>The category you searched for has no products in it!</p>
+        <p>
+        	<%= link_to 'Take me home!', root_path, :class => "btn btn-lg btn-danger" %>
+   		</p>
+    </div>
+<% end %>
 
 <%= render @products %>
