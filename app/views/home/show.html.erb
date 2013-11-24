@@ -5,6 +5,9 @@
 		<% if @product.sale_price %>
 			<p><span class="label label-success sale-icon">On Sale!</span></p>
 		<% end %>
+		<% if @product.stock_quantity == 0 %>
+			<p><span class="label label-primary sold-out-icon">SOLD OUT</span></p>
+		<% end %>
 		
 		<% if @product.category %>
 			<div>
@@ -34,9 +37,7 @@
 	<div class="reviews">
 		<h2>Reviews</h2>
 		<% if @reviews.empty? %>
-			<div>
-				<p><span class="label label-primary no-reviews">No reviews yet..</span></p>
-			</div>
+			<span class="label label-primary no-reviews">No reviews yet..</span>
 		<% end %>
 
 		<% @reviews.each do |review| %>

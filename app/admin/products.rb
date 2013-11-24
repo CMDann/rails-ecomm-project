@@ -3,6 +3,7 @@ ActiveAdmin.register Product do
     column :name
     column :description
     column :category
+    column :stock_quantity
     column :price, :sortable => :price do |product|
       div :class => "price" do
         number_to_currency product.price, :unit => "&dollar;"

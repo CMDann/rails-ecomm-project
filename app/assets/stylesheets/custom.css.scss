@@ -20,14 +20,11 @@
 			text-align: center;
 		}
 
-		P{
-
-			margin: 0px auto;
-			width: 130px;
-
-			.no-reviews{
-			text-align: center;
-			}
+		
+		.no-reviews{
+		text-align: center;
+		width: 130px;
+		margin: 0px auto;
 		}
 	}
 }
@@ -43,5 +40,9 @@
 }
 
 .sale-icon{
+	float: right;
+}
+
+.sold-out-icon{
 	float: right;
 }

@@ -4,6 +4,9 @@
 			<% if product.sale_price %>
 				<p><span class="label label-success sale-icon">On Sale!</span></p>
 			<% end %>
+			<% if product.stock_quantity == 0 %>
+				<p><span class="label label-primary sold-out-icon">SOLD OUT</span></p>
+			<% end %>
 			<h2><%= link_to product.name, store_product_path(product) %></h2>
 		</div>
 
