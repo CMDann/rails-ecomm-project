@@ -1,6 +1,8 @@
 <h2><%= @category.title %></h2>
 <p><%= @category.description %></p>
 
+<div class="pagination-div"><%= paginate @products, :window => 2 %></div>
+
 <% if @products.empty? %>
 	<div class="jumbotron">
         <h1>No products are in this category!</h1>

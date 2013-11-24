@@ -13,7 +13,7 @@ class HomeController < ApplicationController
   end
 
   def search_results
-    @products = Product.where("name LIKE ?", "%#{params[:keywords]}%")
+    @products = Product.where("name LIKE ?", "%#{params[:keywords]}%").page(params[:page]).per(9)
   end
 
   def page # Find a specific page based on the id sent
@@ -21,6 +21,6 @@ class HomeController < ApplicationController
   end
 
   def sale # Find products that are on sale
-    @products = Product.where("sale_price IS NOT NULL")
+    @products = Product.where("sale_price IS NOT NULL").page(params[:page]).per(9)
   end
 end
