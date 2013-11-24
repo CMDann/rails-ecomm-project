@@ -30,6 +30,7 @@ gem "paperclip", "~> 3.0"
 #gem "cocaine", "= 0.3.2" # Paperyclip was having an error - suggested fix
 gem "scoped_search"
 gem 'haml-rails'
+gem "ckeditor" # WYSIWYG Editor
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
