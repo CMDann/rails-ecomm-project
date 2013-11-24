@@ -169,6 +169,11 @@ Change Log
            - Added page route to routes, can view page content from partial
            - Added CKEditor Gem, implemented with paperclip and active admin
            - Began to add page links to template navigation bar. (hard coded for now)
+           - Added "On Sale" and "SOLD OUT" badges to products
+           - Added category search
+           - Added "No product found" message to the category search
+           - Created category partial to list all categories on the side of site for category search (not yet added)
+           - Changed product page category tags to links to category search
 
 11.22.2013 - Added basic SASS styles to the site
            - Added boostrap theme to the framework
