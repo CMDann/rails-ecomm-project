@@ -164,6 +164,12 @@ vendor
 Change Log
 ==========
 <pre>
+11.23.2013 - Added page model to the database
+           - Added page resource to active admin
+           - Added page route to routes, can view page content from partial
+           - Added CKEditor Gem, implemented with paperclip and active admin
+           - Began to add page links to template navigation bar. (hard coded for now)
+
 11.22.2013 - Added basic SASS styles to the site
            - Added boostrap theme to the framework
            - Added product reviews to product pages
