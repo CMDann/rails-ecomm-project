@@ -164,6 +164,13 @@ vendor
 Change Log
 ==========
 <pre>
+11.24.2013 - Fixed category links on product pages
+           - Added category navigation bar to side layout
+           - Added pages dynamically to site navigation
+           - Added categories dynamically to category nav bar
+           - Added pagination to index page
+           - Added pagination to search results and categories
+
 11.23.2013 - Added page model to the database
            - Added page resource to active admin
            - Added page route to routes, can view page content from partial
@@ -172,7 +179,7 @@ Change Log
            - Added "On Sale" and "SOLD OUT" badges to products
            - Added category search
            - Added "No product found" message to the category search
-           - Created category partial to list all categories on the side of site for category search (not yet added)
+           - Created category partial to list all categories
            - Changed product page category tags to links to category search
 
 11.22.2013 - Added basic SASS styles to the site
