@@ -7,6 +7,9 @@ ActiveAdmin.setup do |config|
   #
   config.site_title = "Rails Ecomm Project"
 
+  # To load a javascript file:
+  config.register_javascript 'ckeditor/init.js'
+
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
@@ -17,7 +20,7 @@ ActiveAdmin.setup do |config|
   #
   # Note: Recommended image height is 21px to properly fit in the header
   #
-  # config.site_title_image = "/images/logo.png"
+  # config.site_title_image = "/images/rails.png"
 
   # == Default Namespace
   #
