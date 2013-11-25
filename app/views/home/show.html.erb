@@ -29,7 +29,7 @@
 
 	<% if @product.image_file_name %>
 		<div class="product_image">
-			<%= image_tag @product.image, :width => "350", :height => "350" %>
+			<%= image_tag @product.image.url(:medium) %>
 		</div>
 	<% end %>
 
