@@ -3,7 +3,7 @@ Rails_Ecomm_Project
 <a href="https://coderwall.com/cmdann"><img alt="Endorse CMDann on Coderwall" src="https://api.coderwall.com/cmdann/endorsecount.png" /></a>
 
 <p>Ruby on Rails Final Project. Ecommerce Website.RRC BIT</p>
-<p>Check out a live version running on my personal server <a href="http://cmdann.ca/school/ruby/Rails_Ecomm_Project">here</a></p>
+
 <p>Check out <a href="http://cmdann.ca/">CMDann.ca</a></p>
 
 <img src="http://www.rrc.mb.ca/images/new_home_page_images/rrc_logo.png">
