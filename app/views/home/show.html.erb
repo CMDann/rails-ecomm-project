@@ -1,13 +1,14 @@
 <div class="jumbotron">
+	<% if @product.sale_price %>
+		<p><span class="label label-success sale-icon">On Sale!</span></p>
+	<% end %>
+	<% if @product.stock_quantity == 0 %>
+		<p><span class="label label-primary sold-out-icon">SOLD OUT</span></p>
+	<% end %>
+
 	<h1><%= @product.name %></h1>
 
 	<div class="product_body">
-		<% if @product.sale_price %>
-			<p><span class="label label-success sale-icon">On Sale!</span></p>
-		<% end %>
-		<% if @product.stock_quantity == 0 %>
-			<p><span class="label label-primary sold-out-icon">SOLD OUT</span></p>
-		<% end %>
 		
 		<% if @product.category %>
 			<div>
@@ -47,25 +48,6 @@
 	<% end %>
 
 	<div class="reviews">
-
-
-		<div id="content">
-    <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-        <li class="active"><a href="#description-tab" data-toggle="tab">Description</a></li>
-        <li><a href="#reviews-tab" data-toggle="tab">Reviews</a></li>
-    </ul>
-    <div id="my-tab-content" class="tab-content">
-        <div class="tab-pane active" id="description-tab">
-            <h1>Description</h1>
-            <p>Descitpion</p>
-        </div>
-        <div class="tab-pane" id="reviews-tab">
-            <h1>Reviews</h1>
-            <p>Reviews</p>
-        </div>
-    </div>
-</div>
-
 
 		<h2>Reviews</h2>
 		<% if @reviews.empty? %>
