@@ -15,6 +15,7 @@ RailsEcommProject::Application.routes.draw do
 
   # On Sale
   match 'sale' => 'home#sale', :as => 'sale', :via => :get
+  match 'new'  => 'home#new',  :as => 'new',  :via => :get
 
   # Search routes
   match 'search'         => 'home#search',         :as => 'search',         :via => :get

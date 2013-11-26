@@ -21,6 +21,13 @@
 			<p><%= number_to_currency @product.price %></p>
 		<% end %>
 
+		<!-- Add to cart button -->
+		<% if @product.stock_quantity == 0 %>
+			<button type="button" class="btn btn-primary disabled">SOLD OUT</button>
+		<% else %>
+			<button type="button" class="btn btn-primary">Add To Card</button>
+		<% end %>
+
 		<div class="description">
 			<p><%= @product.description %></p>
 		</div>

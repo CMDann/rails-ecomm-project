@@ -11,9 +11,13 @@
 		</div>
 
 		<div class="panel-body">
-			<% if product.image_file_name %>
-				<p><%= image_tag product.image.url(:thumb) %></p>
-			<% end %>
+			<div class="product-img-div">
+				<% if product.image_file_name %>
+					<p><%= image_tag product.image.url(:thumb) %></p>
+				<% else %>
+					<p><%= image_tag "default.gif" %></p> <!-- Default image in app/assets/images -->
+				<% end %>
+			</div>
 
 			<% if product.category %>
 				<strong>Category:</strong> <%= product.category.title %>
@@ -23,6 +27,13 @@
 				<p><span class="salePrice"><%= number_to_currency product.sale_price %></span> <span class="oldPrice"><%= number_to_currency product.price %></span></p>
 			<% else %>
 				<p><%= number_to_currency product.price %></p>
+			<% end %>
+
+			<!-- Add to cart button -->
+			<% if product.stock_quantity == 0 %>
+				<button type="button" class="btn btn-primary disabled">SOLD OUT</button>
+			<% else %>
+				<button type="button" class="btn btn-primary">Add To Card</button>
 			<% end %>
 		</div>
 	</section>

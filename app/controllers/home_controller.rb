@@ -23,4 +23,8 @@ class HomeController < ApplicationController
   def sale # Find products that are on sale
     @products = Product.where("sale_price IS NOT NULL").page(params[:page]).per(9)
   end
+
+  def new #Find the last 5 products added
+    @products = Product.order("id DESC").limit(9).page(params[:page]).per(9)
+  end
 end
