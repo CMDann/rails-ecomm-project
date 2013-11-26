@@ -38,8 +38,13 @@
 		<div class="product_image">
 			<%= image_tag @product.image.url(:medium) %>
 		</div>
-	<% end %>
 
+		<% else %>
+
+		<div class="product_image">
+			<%= image_tag "default.gif" %>
+		</div> <!-- Default image in app/assets/images -->
+	<% end %>
 
 	<div class="reviews">
 		<h2>Reviews</h2>
@@ -54,7 +59,7 @@
 			</div>
 
 			<div class="panel-body">
-				<p>Rating: <%= review.rating %> /5</p>
+				<p>Rating: <%= review.rating %> / 5.0</p>
 				<p><%= review.content %>
 			</div>
 		</div>

@@ -46,7 +46,7 @@
         <div class="list-group">
           <a href="#" class="list-group-item active">Categories</a>
           <%= link_to 'On Sale!', sale_path, :class=>"list-group-item" %>
-          <%= link_to 'New', new_path, :class=>"list-group-item" %>
+          <%= link_to 'New !', new_path, :class=>"list-group-item" %>
           <% categories.each do |category| %>
             <%= link_to category.title , category_path(:id => category.id), :class=>"list-group-item" %>
           <% end %>

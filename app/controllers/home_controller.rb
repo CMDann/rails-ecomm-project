@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index # 
-    @products   = Product.order(:name).page(params[:page]).per(3)
+    @products   = Product.order("id DESC").page(params[:page]).per(3)
   end # Load the app/views/home/index
 
   def show
