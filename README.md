@@ -2,11 +2,18 @@ Rails_Ecomm_Project
 ===================
 <a href="https://coderwall.com/cmdann"><img alt="Endorse CMDann on Coderwall" src="https://api.coderwall.com/cmdann/endorsecount.png" /></a>
 
-<p>Ruby on Rails Final Project. Ecommerce Website.RRC BIT</p>
+<p>Ruby on Rails Final Project. Ecommerce Website. RRC BIT ECOMMERCE (RUBY)</p>
 
 <p>Check out <a href="http://cmdann.ca/">CMDann.ca</a></p>
 
 <img src="http://www.rrc.mb.ca/images/new_home_page_images/rrc_logo.png">
+
+<p>This project uses active admin as the admin backend. The default admin user login is:</p>
+<pre>
+Username: admin@example.com
+Password: password
+</pre>
+<p>If you are going to use this, you should change that, not so secure</p>
 
 Gems Used
 =========
@@ -30,6 +37,7 @@ Description of Contents
 The default directory structure of a generated Ruby on Rails application:
 <pre>
   |-- app
+  |   |-- admin
   |   |-- assets
   |   |   |-- images
   |   |   |-- javascripts
@@ -38,7 +46,13 @@ The default directory structure of a generated Ruby on Rails application:
   |   |-- helpers
   |   |-- mailers
   |   |-- models
+  |   |   `-- ckeditor
   |   `-- views
+  |       |-- home
+  |       |-- kaminari
+  |       |-- pages
+  |       |-- products
+  |       |-- search
   |       `-- layouts
   |-- config
   |   |-- environments
