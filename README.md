@@ -169,6 +169,15 @@ vendor
 Change Log
 ==========
 <pre>
+11.26.2013 - Added a "New" page that displays newest products
+           - Added "add to cart buttons" (cart not implemented)
+           - Added disabled buttons for sold out items
+           - Fixed up sizes for products being displayed
+           - Changed product descriptions to raw output
+           - Added CKEDitor for description
+           - Added default image for products without images added
+           - Added default size for image thumbnails
+
 11.25.2013 - Fixed paperclip image output, using correct tags
            - Added production gems for production on heroku
            - Deployed to personal server (no heroku yet)
