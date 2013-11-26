@@ -8,8 +8,6 @@ Rails_Ecomm_Project
 
 <img src="http://www.rrc.mb.ca/images/new_home_page_images/rrc_logo.png">
 
-<img src="http://cmdann.ca/wp-content/themes/CMDannWPTheme2/images/object973716115.png">
-
 Gems Used
 =========
 <pre>
@@ -165,6 +163,8 @@ vendor
   subdirectory. If the app has frozen rails, those gems also go here, under
   vendor/rails/. This directory is in the load path.
 </pre>  
+
+<img src="http://cmdann.ca/wp-content/themes/CMDannWPTheme2/images/object973716115.png">
 
 Change Log
 ==========
