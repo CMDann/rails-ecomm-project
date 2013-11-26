@@ -5,7 +5,7 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+# gem 'sqlite3'
 
 
 # Gems used only for assets and not required
@@ -31,6 +31,16 @@ gem "paperclip", "~> 3.0"
 gem "scoped_search"
 gem 'haml-rails'
 gem "ckeditor" # WYSIWYG Editor
+# gem 'pg', "~> 0.17.0"
+
+gem "heroku"
+group :development, :test do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+  gem 'thin'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
