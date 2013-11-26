@@ -47,6 +47,26 @@
 	<% end %>
 
 	<div class="reviews">
+
+
+		<div id="content">
+    <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+        <li class="active"><a href="#description-tab" data-toggle="tab">Description</a></li>
+        <li><a href="#reviews-tab" data-toggle="tab">Reviews</a></li>
+    </ul>
+    <div id="my-tab-content" class="tab-content">
+        <div class="tab-pane active" id="description-tab">
+            <h1>Description</h1>
+            <p>Descitpion</p>
+        </div>
+        <div class="tab-pane" id="reviews-tab">
+            <h1>Reviews</h1>
+            <p>Reviews</p>
+        </div>
+    </div>
+</div>
+
+
 		<h2>Reviews</h2>
 		<% if @reviews.empty? %>
 			<span class="label label-primary no-reviews">No reviews yet..</span>
