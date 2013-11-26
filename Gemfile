@@ -1,14 +1,11 @@
 # Gemfile
 source 'https://rubygems.org'
-ruby "1.9.3"
+ruby "1.9.2" # Required by Heroku to run with ruby 1.9.2
 
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-# gem 'sqlite3'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -27,13 +24,10 @@ end
 gem "jquery-rails", "< 3.0.0"
 gem 'activeadmin'
 gem 'activemerchant'
-# gem 'will_paginate', "3.0.pre2" # Active Admin Requires a specific will_paginate gem
 gem "paperclip", "~> 3.0"
-#gem "cocaine", "= 0.3.2" # Paperyclip was having an error - suggested fix
 gem "scoped_search"
 gem 'haml-rails'
 gem "ckeditor" # WYSIWYG Editor
-# gem 'pg', "~> 0.17.0"
 
 gem "heroku"
 group :development, :test do
