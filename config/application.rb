@@ -60,5 +60,6 @@ module RailsEcommProject
     config.assets.version = '1.0'
 
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+    config.assets.initialize_on_precompile = false
   end
 end
