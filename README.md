@@ -4,6 +4,8 @@ Rails_Ecomm_Project
 
 <p>Ruby on Rails Final Project. Ecommerce Website. RRC BIT ECOMMERCE (RUBY)</p>
 
+<p>Live version is deployed to heroku <a href="http://cmdann-rails-project.herokuapp.com/">here</a>. Although I am having issues deploying the app to Heroku using <a href="https://snap-ci.com">Snap-CI</a> due to both Ruby and Rails version on the Heroku end.</p>
+
 <p>Check out <a href="http://cmdann.ca/">CMDann.ca</a></p>
 
 <img src="http://www.rrc.mb.ca/images/new_home_page_images/rrc_logo.png">
