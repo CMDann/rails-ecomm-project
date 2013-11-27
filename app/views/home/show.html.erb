@@ -1,9 +1,9 @@
 <div class="jumbotron">
 	<% if @product.sale_price %>
-		<p><span class="label label-success sale-icon">On Sale!</span></p>
+	<p><span class="label label-success sale-icon">On Sale!</span></p>
 	<% end %>
 	<% if @product.stock_quantity == 0 %>
-		<p><span class="label label-primary sold-out-icon">SOLD OUT</span></p>
+	<p><span class="label label-primary sold-out-icon">SOLD OUT</span></p>
 	<% end %>
 
 	<h1><%= @product.name %></h1>
@@ -11,60 +11,72 @@
 	<div class="product_body">
 		
 		<% if @product.category %>
-			<div>
-				<strong>Category:</strong> <%= link_to @product.category.title, category_path(:id => @product.category.id) %>
-			</div>
+		<div>
+			<strong>Category:</strong> <%= link_to @product.category.title, category_path(:id => @product.category.id) %>
+		</div>
 		<% end %>
 
 		<% if @product.sale_price then %>
-			<p><span class="salePrice"><%= number_to_currency @product.sale_price %></span> <span class="oldPrice"><%= number_to_currency @product.price %></s></p>
+		<p><span class="salePrice"><%= number_to_currency @product.sale_price %></span> <span class="oldPrice"><%= number_to_currency @product.price %></s></p>
 		<% else %>
-			<p><%= number_to_currency @product.price %></p>
+		<p><%= number_to_currency @product.price %></p>
 		<% end %>
 
 		<!-- Add to cart button -->
 		<% if @product.stock_quantity == 0 %>
-			<button type="button" class="btn btn-primary disabled">SOLD OUT</button>
+		<button type="button" class="btn btn-primary disabled">SOLD OUT</button>
 		<% else %>
-			<button type="button" class="btn btn-primary">Add To Cart</button>
+		<button type="button" class="btn btn-primary">Add To Cart</button>
 		<% end %>
-
-		<div class="description">
-			<p><%= raw(@product.description) %></p>
-		</div>
 
 	</div>
 
 	<% if @product.image_file_name %>
-		<div class="product_image">
-			<%= image_tag @product.image.url(:medium) %>
-		</div>
+	<div class="product_image">
+		<%= image_tag @product.image.url(:medium) %>
+	</div>
 
-		<% else %>
+	<% else %>
 
-		<div class="product_image">
-			<%= image_tag "default.gif" %>
-		</div> <!-- Default image in app/assets/images -->
+	<div class="product_image">
+		<%= image_tag "default.gif" %>
+	</div> <!-- Default image in app/assets/images -->
 	<% end %>
 
+	<hr />
+
 	<div class="reviews">
+		<h2 id="nav-tabs">Details</h2>
+		<div class="bs-example">
+			<ul class="nav nav-tabs" style="margin-bottom: 15px;">
+				<li class="active"><a href="#home" data-toggle="tab">Description</a></li>
+				<li><a href="#profile" data-toggle="tab">Reviews</a></li>
+			</ul>
+			<div id="myTabContent" class="tab-content">
+				<div class="tab-pane fade active in" id="home">
+					<div class="description">
+						<p><%= raw(@product.description) %></p>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="profile">
+					<h2>Reviews</h2>
+					<% if @reviews.empty? %>
+					<span class="label label-primary no-reviews">No reviews yet..</span>
+					<% end %>
 
-		<h2>Reviews</h2>
-		<% if @reviews.empty? %>
-			<span class="label label-primary no-reviews">No reviews yet..</span>
-		<% end %>
+					<% @reviews.each do |review| %>
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<h3 class="panel-title"><%= review.customer.first_name %> <%= review.customer.last_name %></h3>
+						</div>
 
-		<% @reviews.each do |review| %>
-		<div class="panel panel-info">
-			<div class="panel-heading">
-				<h3 class="panel-title"><%= review.customer.first_name %> <%= review.customer.last_name %></h3>
-			</div>
-
-			<div class="panel-body">
-				<p>Rating: <%= review.rating %> / 5.0</p>
-				<p><%= review.content %>
+						<div class="panel-body">
+							<p>Rating: <%= review.rating %> / 5.0</p>
+							<p><%= review.content %>
+							</div>
+						</div>
+						<% end %>
+					</div>
+				</div>
 			</div>
 		</div>
-		<% end %>
-	</div>
-</div>
