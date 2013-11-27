@@ -191,6 +191,11 @@ Change Log
            - Added CKEDitor for description
            - Added default image for products without images added
            - Added default size for image thumbnails
+           - Prepred rails application for deployment on heroku
+           - Added shopping cart route and page
+           - Styled shopping cart, check for session
+           - Added empty cart message
+           - Began to implement adding items to cart
 
 11.25.2013 - Fixed paperclip image output, using correct tags
            - Added production gems for production on heroku
