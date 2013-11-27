@@ -1,8 +1,9 @@
 class Order < ActiveRecord::Base
   belongs_to :customer
-  has_many :lineitems
+  belongs_to :status
+  has_many :line_items
 
-  validates :status,      :presence => true
+  validates :status_id,   :presence => true
   validates :order_total, :presence => true,
                           :numericality => { :greater_than_or_equal_to => 0 }
 
@@ -10,5 +11,5 @@ class Order < ActiveRecord::Base
   validates :hst_rate,    :numericality => { :greater_than_or_equal_to => 0 }
   validates :pst_rate,    :numericality => { :greater_than_or_equal_to => 0 }               
 
-  attr_accessible :gst_rate, :hst_rate, :pst_rate, :status, :order_total, :customer_id
+  attr_accessible :gst_rate, :hst_rate, :pst_rate, :status_id, :order_total, :customer_id
 end
