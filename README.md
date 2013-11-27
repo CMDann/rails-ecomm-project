@@ -185,6 +185,14 @@ vendor
 Change Log
 ==========
 <pre>
+11.27.2013 - Added tabs to product detail page
+           - Removed status from orders
+           - Added status model to database
+           - Added status associations and validations
+           - Added status to active admin
+           - Added priorities to the active admin navigation bar
+           - Added drop down menus to the active admin nav bar
+
 11.26.2013 - Added a "New" page that displays newest products
            - Added "add to cart buttons" (cart not implemented)
            - Added disabled buttons for sold out items
