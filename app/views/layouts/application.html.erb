@@ -63,7 +63,12 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
           </p>
 
-          <%= render 'search' %>
+          <%= render 'search/search' %>
+
+          <!-- Message Area -->
+          <div class="message-output">
+            <%= render 'message/message' %>
+          </div>
   
           <%= yield %>
           
