@@ -198,6 +198,8 @@ Change Log
            - Styled shopping cart, check for session
            - Added empty cart message
            - Began to implement adding items to cart
+           - Added message output area for flash messages
+           - Added message partial to handle displaying the correct message
 
 11.25.2013 - Fixed paperclip image output, using correct tags
            - Added production gems for production on heroku
