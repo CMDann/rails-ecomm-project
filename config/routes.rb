@@ -21,6 +21,9 @@ RailsEcommProject::Application.routes.draw do
   match 'search'         => 'home#search',         :as => 'search',         :via => :get
   match 'search_results' => 'home#search_results', :as => 'search_results', :via => :post
 
+  # Shopping cart route
+  match 'cart' => 'home#cart', :as => 'cart', :via => :get
+
 
 
   devise_for :admin_users, ActiveAdmin::Devise.config

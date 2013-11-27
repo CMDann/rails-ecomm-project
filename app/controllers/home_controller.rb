@@ -27,4 +27,8 @@ class HomeController < ApplicationController
   def new #Find the last 5 products added
     @products = Product.order("id DESC").limit(9).page(params[:page]).per(9)
   end
+
+  def cart
+    # Code to get line items for the cart
+  end
 end
