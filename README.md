@@ -187,6 +187,8 @@ Change Log
 <pre>
 11.28.2013 - Altered search results to display related search results in the category
            - Altered search result route to paginate search results
+           - Fixed up message partial to not always display a message
+           - Changed message content to the contents of the flash message
 
 11.27.2013 - Added tabs to product detail page
            - Removed status from orders
