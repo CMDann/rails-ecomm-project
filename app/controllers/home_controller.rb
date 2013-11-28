@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  before_filter :initialize_session
+  
   def index # 
     @products   = Product.order("id DESC").page(params[:page]).per(3)
   end # Load the app/views/home/index
@@ -23,8 +25,6 @@ class HomeController < ApplicationController
       @products = Product.where("name LIKE ? OR description LIKE ? OR category_id LIKE ?", 
                                 "%#{params[:keywords]}%", "%#{params[:keywords]}%", "%#{@category.first.id}%").page(params[:page]).per(3)
     end
-
-    
   end
 
   def page # Find a specific page based on the id sent
@@ -41,5 +41,29 @@ class HomeController < ApplicationController
 
   def cart
     # Code to get line items for the cart
+  end
+
+  def empty_cart
+    session[:cart] = nil
+    redirect_to root_path
+  end
+
+  def add_product
+    id = params[:id].to_i
+    session[:cart] << id unless session[:cart].include?(id)
+    redirect_to root_path
+  end
+
+  def remove_product
+    id = params[:id].to_i
+    session[:cart].delete(id)
+    redirect_to root_path
+  end
+
+protected
+  def initialize_session
+    session[:cart] ||= []
+    @cart_products = []
+    session[:cart].each { |id| @cart_products << Product.find(id) }
   end
 end

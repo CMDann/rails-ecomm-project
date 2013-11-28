@@ -22,8 +22,10 @@ RailsEcommProject::Application.routes.draw do
   match 'search_results' => 'home#search_results', :as => 'search_results'#, :via => :post
 
   # Shopping cart route
-  match 'cart' => 'home#cart', :as => 'cart', :via => :get
-
+  match 'cart'               => 'home#cart',           :as => 'cart',            :via => :get
+  match 'empty'              => 'home#empty_cart',     :as => 'empty_cart',      :via => :get
+  match 'add_product/:id'    => 'home#add_product',    :as => 'add_product',     :via => :get
+  match 'remove_product/:id' => 'home#remove_product', :as => 'remove_product',  :via => :get
 
 
   devise_for :admin_users, ActiveAdmin::Devise.config

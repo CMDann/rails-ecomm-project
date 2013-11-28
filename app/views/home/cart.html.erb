@@ -2,9 +2,17 @@
 <div class="jumbotron">
 <div class="bs-example table-responsive">
 
-<% if session[:cart] %>
+<% if session[:cart].empty? %>
 
   <!-- There are no items in the cart -->
+  <p>Your cart is totaly empty!</p>
+    <p>
+        <%= link_to 'Take me home!', root_path, :class => "btn btn-lg btn-danger" %>
+    </p>
+
+  <% else %>
+
+    <!-- There are no items in the cart -->
   <table class="table table-striped table-bordered table-hover ">
     <thead>
       <tr>
@@ -16,41 +24,22 @@
     </tr>
 </thead>
 <tbody>
+
+    <% @cart_products.each do |product| %>
     <tr>
-        <td>Shoe Phone</td>
+        <td><%= product.title %></td>
         <td>2</td>
-        <td>$59.99</td>
+        <td><%= product.price %></td>
         <td><button type="button" class="btn btn-warning">Update</button></td>
         <td><button type="button" class="btn btn-primary">Remove</button></td>
     </tr>
-    <tr>
-        <td>Shoe Phone</td>
-        <td>2</td>
-        <td>$59.99</td>
-        <td><button type="button" class="btn btn-warning">Update</button></td>
-        <td><button type="button" class="btn btn-primary">Remove</button></td>
-    </tr>
-    <tr>
-        <td>Shoe Phone</td>
-        <td>2</td>
-        <td>$59.99</td>
-        <td><button type="button" class="btn btn-warning">Update</button></td>
-        <td><button type="button" class="btn btn-primary">Remove</button></td>
-    </tr>
+    <% end %>
 </tbody>
 </table>
 
 <button class="btn btn-primary">Empty Cart</button> 
 <button type="submit" class="btn btn-success">Checkout</button> 
   
-
-  <% else %>
-
-  <!-- There are no items in the cart -->
-  <p>Your cart is totaly empty!</p>
-    <p>
-        <%= link_to 'Take me home!', root_path, :class => "btn btn-lg btn-danger" %>
-    </p>
 
 
 <% end %>
