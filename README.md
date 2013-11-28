@@ -185,6 +185,9 @@ vendor
 Change Log
 ==========
 <pre>
+11.28.2013 - Altered search results to display related search results in the category
+           - Altered search result route to paginate search results
+
 11.27.2013 - Added tabs to product detail page
            - Removed status from orders
            - Added status model to database
