@@ -13,7 +13,18 @@ class HomeController < ApplicationController
   end
 
   def search_results
-    @products = Product.where("name LIKE ? OR description LIKE ?", "%#{params[:keywords]}%", "%#{params[:keywords]}%").page(params[:page]).per(9)
+    # Trying to implement category search
+    @category = Category.where("title LIKE ?", "%#{params[:keywords]}%")
+
+    if ( @category.first.nil? )
+      @products = Product.where("name LIKE ? OR description LIKE ?", 
+                              "%#{params[:keywords]}%", "%#{params[:keywords]}%").page(params[:page]).per(9)
+    else
+      @products = Product.where("name LIKE ? OR description LIKE ? OR category_id LIKE ?", 
+                                "%#{params[:keywords]}%", "%#{params[:keywords]}%", "%#{@category.first.id}%").page(params[:page]).per(9)
+    end
+
+    
   end
 
   def page # Find a specific page based on the id sent
