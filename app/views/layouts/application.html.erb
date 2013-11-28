@@ -7,8 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
  <body>
+  <header>
     <!-- Some poorly placed logic -->
-
     <% categories = Category.all %>
     <% pages = Page.all %>
     <div class="navbar navbar-inverse" role="navigation">
@@ -42,6 +42,7 @@
           </div><!--/.nav-collapse -->
       </div><!-- /.container -->
     </div> <!-- /.navbar -->
+  </header>
 
       <div class="col-xs-6 col-sm-3 sidebar-offcanvas categories" id="sidebar" role="navigation">
         <div class="list-group">
@@ -69,9 +70,11 @@
           <div class="message-output">
             <%= render 'message/message' %>
           </div>
-  
-          <%= yield %>
           
+          <section>
+            <%= yield %>
+          </section>
+
         </div><!--/span-->
       </div><!--/row-->
 
