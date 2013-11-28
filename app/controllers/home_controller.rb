@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
-  before_filter :initialize_session
-  
+
   def index # 
     @products   = Product.order("id DESC").page(params[:page]).per(3)
   end # Load the app/views/home/index
@@ -58,12 +57,5 @@ class HomeController < ApplicationController
     id = params[:id].to_i
     session[:cart].delete(id)
     redirect_to root_path
-  end
-
-protected
-  def initialize_session
-    session[:cart] ||= []
-    @cart_products = []
-    session[:cart].each { |id| @cart_products << Product.find(id) }
   end
 end
