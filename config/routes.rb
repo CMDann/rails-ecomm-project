@@ -19,7 +19,7 @@ RailsEcommProject::Application.routes.draw do
 
   # Search routes
   match 'search'         => 'home#search',         :as => 'search',         :via => :get
-  match 'search_results' => 'home#search_results', :as => 'search_results', :via => :post
+  match 'search_results' => 'home#search_results', :as => 'search_results'#, :via => :post
 
   # Shopping cart route
   match 'cart' => 'home#cart', :as => 'cart', :via => :get
