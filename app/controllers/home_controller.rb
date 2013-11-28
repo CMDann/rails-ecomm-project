@@ -44,18 +44,21 @@ class HomeController < ApplicationController
 
   def empty_cart
     session[:cart] = nil
-    redirect_to root_path
+    flash[:success_message] = "Your cart has been emptied"
+    redirect_to cart_path
   end
 
   def add_product
     id = params[:id].to_i
     session[:cart] << id unless session[:cart].include?(id)
+    flash[:success_message] = "The product has been added to your cart!"
     redirect_to root_path
   end
 
   def remove_product
     id = params[:id].to_i
     session[:cart].delete(id)
-    redirect_to root_path
+    flash[:success_message] = "The product has been removed from your cart!"
+    redirect_to cart_path
   end
 end

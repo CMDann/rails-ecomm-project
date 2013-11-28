@@ -33,7 +33,6 @@
 			<% if product.stock_quantity == 0 %>
 				<button type="button" class="btn btn-primary disabled">SOLD OUT</button>
 			<% else %>
-				<button type="button" class="btn btn-primary">Add To Cart</button>
 				<%= link_to "Add To Cart", add_product_path(product.id) %>
 			<% end %>
 		</div>

@@ -1,13 +1,16 @@
+$max_width: 100%;
+$center: 0px auto;
+
 .jumbotron{
 	.product_body{
 		width: 45%;
-		margin: 0px auto;
+		margin: $center;
 		float: left;
 	}
 
 	.product_image{
 		width: 45%;
-		margin: 0px auto;
+		margin: $center;
 		float: right;
 	}
 
@@ -24,7 +27,7 @@
 		.no-reviews{
 		text-align: center;
 		width: 130px;
-		margin: 0px auto;
+		margin: $center;
 		}
 	}
 }
@@ -89,7 +92,7 @@
 
 .pagination-div{
 	min-width: 100px;
-	margin: 0px auto;
+	margin: $center;
 	clear: both;
 }
 
