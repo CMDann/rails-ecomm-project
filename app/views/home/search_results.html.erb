@@ -14,4 +14,4 @@
 
 <%= render @products %>
 
-<div class="pagination-div"><%= paginate @products, :window => 2 %></div>
+<div class="pagination-div"><%= paginate @products, :window => 2, :params => { :controller => 'home', :action => 'search_results', _: nil, _method: nil, authenticity_token: nil, utf8: nil} %></div>
