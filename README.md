@@ -189,6 +189,12 @@ Change Log
            - Altered search result route to paginate search results
            - Fixed up message partial to not always display a message
            - Changed message content to the contents of the flash message
+           - Added cart session
+           - Can now add and remove items from your shopping cart
+           - Cart lists items in your cart session
+           - Added sass variables
+           - Valid HTML5 markup
+           - Added routes for adding, removing items to cart, empty cart
 
 11.27.2013 - Added tabs to product detail page
            - Removed status from orders
