@@ -1,5 +1,4 @@
 <h2>New Products</h2>
-<div class="pagination-div"><%= paginate @products, :window => 2 %></div>
 
 <% if @products.empty? %>
 
@@ -14,3 +13,5 @@
 <% end %>
 
 <%= render @products %>
+
+<div class="pagination-div"><%= paginate @products, :window => 2 %></div>
