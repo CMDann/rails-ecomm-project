@@ -46,12 +46,19 @@
         <td><%= number_to_currency total %></td>
         <td></td>
     </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><%= link_to "Empty Cart", empty_cart_path, :class => "btn btn-danger" %></td>
+        <td>
+            <%= form_tag checkout_path :class => 'form-inline' do %>
+                <%= submit_tag 'Checkout', class: "btn btn-success" %>
+            <% end %>
+        </td>
+    </tr>
 </tbody>
 </table>
-
-<%= link_to "Empty Cart", empty_cart_path, :class => "btn btn-danger" %>
-<button type="submit" class="btn btn-success">Checkout</button> 
-  
 </div><!-- /example -->
 
 <% end %>

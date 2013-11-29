@@ -42,6 +42,10 @@ class HomeController < ApplicationController
     @provinces = Province.all #Get all the provinces in the database
   end
 
+  def checkout
+
+  end
+
   def empty_cart
     session[:cart] = nil
     flash[:error_message] = "Your cart has been emptied.."
