@@ -10,7 +10,7 @@ ActiveAdmin.register_page "Dashboard" do
     # Display the latest 5 orders placed on the site.
     section "Recent Orders" do
       table_for Order.order("created_at desc").limit(5) do
-        column :order_id
+        column :id
         column :created_at
         column :status
       end
