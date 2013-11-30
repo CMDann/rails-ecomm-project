@@ -18,8 +18,11 @@ test:
   pool: 5
   timeout: 5000
 
+# Uses MySQL Database for production
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  database: rails_ecomm_project
   pool: 5
+  username: DB_USER
+  password: DB_PASSWORD
   timeout: 5000
+
