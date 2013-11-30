@@ -2,19 +2,15 @@
 <table class="table">
     <tr>
         <td>First Name</td>
-        <td></td>
+        <td><%= @first_name %></td>
     </tr>
     <tr>
         <td>Last Name</td>
-        <td></td>
+        <td><%= @last_name %></td>
     </tr>
     <tr>
-        <td>Province</td>
-        <td><%= @province.name %></td>
-    </tr>
-    <tr>
-        <td>City</td>
-        <td></td>
+        <td>Email</td>
+        <td><%= @email %></td>
     </tr>
 </table>
 
@@ -44,8 +40,40 @@
     <% end %>
     <tr>
         <td></td>
-        <td>Total:</td>
+        <td>Sub Total:</td>
         <td><%= number_to_currency total %></td>
+    </tr>
+    <% if @province.first.gst %>
+    <tr>
+    	<% gst_total = total * @province.first.gst.to_d %>
+        <td></td>
+        <td>GST:</td>
+        <td><%= number_to_currency gst_total %></td>
+        <% total += gst_total %>
+    </tr>
+    <% end %>
+    <% if @province.first.pst %>
+    <tr>
+        <% pst_total = total * @province.first.pst.to_d %>
+        <td></td>
+        <td>PST:</td>
+        <td><%= number_to_currency pst_total %></td>
+        <% total += pst_total %>
+    </tr>
+    <% end %>
+    <% if @province.first.hst %>
+	<tr>
+        <% hst_total = total * @province.first.hst.to_d %>
+        <td></td>
+        <td>HST:</td>
+        <td><%= number_to_currency hst_total %></td>
+        <% total += hst_total %>
+    </tr>
+    <% end %>
+    <tr>
+        <td></td>
+        <td>Total:</td>
+        <td><b><%= number_to_currency total %></b></td>
     </tr>
 </tbody>
 </table>
@@ -54,18 +82,18 @@
 <table class="table">
     <tr>
         <td>Address</td>
-        <td></td>
+        <td><%= @address %></td>
     </tr>
     <tr>
         <td>Province</td>
-        <td></td>
+        <td><%= @province.first.name %></td>
     </tr>
     <tr>
         <td>City</td>
-        <td></td>
+        <td><%= @city %></td>
     </tr>
     <tr>
         <td>Postal Code</td>
-        <td></td>
+        <td><%= @postal %></td>
     </tr>
-</table>  
+</table> 
