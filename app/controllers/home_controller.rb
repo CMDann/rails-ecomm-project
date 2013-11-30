@@ -43,6 +43,8 @@ class HomeController < ApplicationController
   end
 
   def checkout
+    session[:checkout] = nil
+
     @province   = Province.where(:id => params[:province])
     @first_name = params[:first_name]
     @last_name  = params[:last_name]
@@ -50,6 +52,24 @@ class HomeController < ApplicationController
     @address    = params[:address]
     @city       = params[:city]
     @postal     = params[:postal]
+
+    session[:checkout] = []
+
+    session[:checkout] << @province
+    session[:checkout] << @first_name
+    session[:checkout] << @last_name
+    session[:checkout] << @email
+    session[:checkout] << @address
+    session[:checkout] << @city
+    session[:checkout] << @postal
+  end
+
+  def create
+
+    
+    
+    flash[:success_message] = "Your order has been placed!"
+    redirect_to root_path
   end
 
   def empty_cart

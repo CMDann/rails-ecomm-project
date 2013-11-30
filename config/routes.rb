@@ -27,6 +27,7 @@ RailsEcommProject::Application.routes.draw do
   match 'add_product/:id'    => 'home#add_product',    :as => 'add_product',     :via => :get
   match 'remove_product/:id' => 'home#remove_product', :as => 'remove_product',  :via => :get
   match 'checkout'           => 'home#checkout',       :as => 'checkout',        :via => :post
+  match 'create'             => 'home#create',         :as => 'create',          :via => :post
 
 
   devise_for :admin_users, ActiveAdmin::Devise.config
