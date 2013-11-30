@@ -11,7 +11,11 @@
 </div>
   <% else %>
 <div class="bs-example table-responsive">
-    <!-- There are no items in the cart -->
+
+
+<%= form_tag checkout_path do %>
+
+    <!-- There are items in the cart -->
   <table class="table table-striped table-bordered table-hover ">
     <thead>
       <tr>
@@ -50,15 +54,50 @@
         <td></td>
         <td></td>
         <td></td>
-        <td><%= link_to "Empty Cart", empty_cart_path, :class => "btn btn-danger" %></td>
+        <td></td>
         <td>
-            <%= form_tag checkout_path :class => 'form-inline' do %>
-                <%= submit_tag 'Checkout', class: "btn btn-success" %>
-            <% end %>
+            <%= link_to "Empty Cart", empty_cart_path, :class => "btn btn-danger" %>
         </td>
     </tr>
 </tbody>
 </table>
+
+    <h2>Order Details</h2>
+
+    <table class="table">
+        <tr>
+            <td><%= label_tag :first_name, "First Name" %></td>
+            <td><%= text_field_tag :fist_name, nil, class: "form-control" %></td>
+        </tr>
+        <tr>
+            <td><%= label_tag :last_name, "Last Name" %></td>
+            <td><%= text_field_tag :last_name, nil, :class => "form-control" %></td>
+        </tr>
+        <tr>
+            <td><%= label_tag :address, "Address" %></td>
+            <td><%= text_field_tag :address, nil, :class => "form-control" %></td>
+        </tr>
+        <tr>
+            <td><%= label_tag :province, "Province" %></td>
+            <td><%= select_tag :province, options_from_collection_for_select(@provinces, "id", "name"), :class => "form-control" %></td>
+        </tr>
+        <tr>
+            <td><%= label_tag :city, "City" %></td>
+            <td><%= text_field_tag :city, nil, :class => "form-control" %></td>
+        </tr>
+        <tr>
+            <td><%= label_tag :email, "Email" %></td>
+            <td><%= email_field_tag :email, nil, :class => "form-control" %></td>
+        </tr>
+        <tr>
+            <td><%= label_tag :postal, "Postal Code" %></td>
+            <td><%= text_field_tag :postal, nil, :class => "form-control" %></td>
+        </tr>
+    </table>    
+
+    <%= submit_tag 'Checkout', class: "btn btn-success" %>
+<% end %>
+
 </div><!-- /example -->
 
 <% end %>

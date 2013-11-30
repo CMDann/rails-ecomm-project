@@ -43,7 +43,10 @@ class HomeController < ApplicationController
   end
 
   def checkout
-
+    @province   = Province.where("id LIKE?", "%#{params[:province]}%")
+    @first_name = params[:first_name]
+    @last_name  = params[:last_name]
+    @email      = params[:email]
   end
 
   def empty_cart
