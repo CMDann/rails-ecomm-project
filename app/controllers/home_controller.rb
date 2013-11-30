@@ -44,6 +44,7 @@ class HomeController < ApplicationController
 
   def checkout
     session[:checkout] = nil
+    session[:checkout] = []
 
     @province   = Province.where(:id => params[:province])
     @first_name = params[:first_name]
@@ -52,10 +53,8 @@ class HomeController < ApplicationController
     @address    = params[:address]
     @city       = params[:city]
     @postal     = params[:postal]
-
-    session[:checkout] = []
-
-    session[:checkout] << @province
+    
+    session[:checkout] << params[:province]
     session[:checkout] << @first_name
     session[:checkout] << @last_name
     session[:checkout] << @email
@@ -65,10 +64,34 @@ class HomeController < ApplicationController
   end
 
   def create
+    # Grab the data passed through the session
+    province   = Province.where(:id => session[:checkout][0])
+    first_name = session[:checkout][1]
+    last_name  = session[:checkout][2]
+    email      = session[:checkout][3]
+    address    = session[:checkout][4]
+    city       = session[:checkout][5]
+    postal     = session[:checkout][6]
 
-    
-    
+    # Create a new customer
+    new_customer = Customer.new(:first_name  => first_name,
+                                :last_name   => last_name,
+                                :city        => city,
+                                :postal_code => postal,
+                                :address     => address,
+                                :email       => email)
+
+    new_customer.province = province.first
+    new_customer.save
+
+    # Clear the sessions
+    session[:checkout] = nil
+    session[:cart] = nil
+
+    # Set the flash message
     flash[:success_message] = "Your order has been placed!"
+
+    # Send the user back to the root
     redirect_to root_path
   end
 
