@@ -89,6 +89,16 @@ The default directory structure of a generated Ruby on Rails application:
 Change Log
 ==========
 <pre>
+11.30.2013 - Fixed nil tax rates not being aloud for provinces that don't use a specific tax
+           - Added checkout page that displays a summary of information added at cart
+           - Added customer creation to checkout process
+           - Added order generation to checkout
+           - Cart items are added to order as line items
+           - Order backs up price of products and a total price based on customer tax rates
+           - Order status can be changed on the back end of the site
+           - Status set to "Processing" by default
+           - Order generation clears cart and checkout session
+
 11.28.2013 - Altered search results to display related search results in the category
            - Altered search result route to paginate search results
            - Fixed up message partial to not always display a message

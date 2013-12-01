@@ -134,6 +134,12 @@ class HomeController < ApplicationController
     redirect_to cart_path
   end
 
+  def edit_cart
+    flash[:error_message] = "Please enter your customer details..."
+    session[:checkout] = nil
+    redirect_to cart_path
+  end
+
   def add_product
     id = params[:id].to_i
     session[:cart] << id unless session[:cart].include?(id)

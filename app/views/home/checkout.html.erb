@@ -104,21 +104,22 @@
     <table class="table">
         <tr>
             <td><%= label_tag :card_name, "Name on Card" %></td>
-            <td><%= text_field_tag :card_name, nil, class: "form-control" %></td>
+            <td><%= text_field_tag :card_name, nil, class: "form-control", :required => true %></td>
         </tr>
         <tr>
             <td><%= label_tag :card_number, "Card Number" %></td>
-            <td><%= text_field_tag :card_number, nil, :class => "form-control" %></td>
+            <td><%= text_field_tag :card_number, nil, :class => "form-control", :required => true %></td>
         </tr>
         <tr>
             <td><%= label_tag :expiry_date, "Expires" %></td>
-            <td><%= text_field_tag :expiry_date, nil, :class => "form-control" %></td>
+            <td><%= text_field_tag :expiry_date, nil, :class => "form-control", :required => true %></td>
         </tr>
         <tr>
             <td><%= label_tag :cvc, "Security Code" %></td>
-            <td><%= text_field_tag :cvc, nil, :class => "form-control" %></td>
+            <td><%= text_field_tag :cvc, nil, :class => "form-control", :required => true %></td>
         </tr>
     </table>    
 
     <%= submit_tag 'Checkout', class: "btn btn-success" %>
+    <%= link_to "Edit Order", edit_cart_path, :class => "btn btn-danger" %>
 <% end %>

@@ -67,15 +67,15 @@
     <table class="table">
         <tr>
             <td><%= label_tag :first_name, "First Name" %></td>
-            <td><%= text_field_tag :first_name, nil, class: "form-control" %></td>
+            <td><%= text_field_tag :first_name, nil, class: "form-control", :required => true %></td>
         </tr>
         <tr>
             <td><%= label_tag :last_name, "Last Name" %></td>
-            <td><%= text_field_tag :last_name, nil, :class => "form-control" %></td>
+            <td><%= text_field_tag :last_name, nil, :class => "form-control", :required => true %></td>
         </tr>
         <tr>
             <td><%= label_tag :address, "Address" %></td>
-            <td><%= text_field_tag :address, nil, :class => "form-control" %></td>
+            <td><%= text_field_tag :address, nil, :class => "form-control", :required => true %></td>
         </tr>
         <tr>
             <td><%= label_tag :province, "Province" %></td>
@@ -83,15 +83,15 @@
         </tr>
         <tr>
             <td><%= label_tag :city, "City" %></td>
-            <td><%= text_field_tag :city, nil, :class => "form-control" %></td>
+            <td><%= text_field_tag :city, nil, :class => "form-control", :required => true %></td>
         </tr>
         <tr>
             <td><%= label_tag :email, "Email" %></td>
-            <td><%= email_field_tag :email, nil, :class => "form-control" %></td>
+            <td><%= email_field_tag :email, nil, :class => "form-control", :required => true %></td>
         </tr>
         <tr>
             <td><%= label_tag :postal, "Postal Code" %></td>
-            <td><%= text_field_tag :postal, nil, :class => "form-control" %></td>
+            <td><%= text_field_tag :postal, nil, :class => "form-control", :required => true %></td>
         </tr>
     </table>    
 
