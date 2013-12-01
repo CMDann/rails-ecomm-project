@@ -73,6 +73,11 @@ class HomeController < ApplicationController
     city       = session[:checkout][5]
     postal     = session[:checkout][6]
 
+    total_price = 0
+
+    # Place holder quantity
+    quantity = 1
+
     # Create a new customer
     new_customer = Customer.new(:first_name  => first_name,
                                 :last_name   => last_name,
@@ -83,6 +88,34 @@ class HomeController < ApplicationController
 
     new_customer.province = province.first
     new_customer.save
+
+    # Create an order
+    processing = Status.where(:title => 'Processing').first
+
+    new_order = Order.new
+    new_order.customer = new_customer
+    new_order.gst_rate = new_customer.province.gst unless new_customer.province.gst.nil?
+    new_order.pst_rate = new_customer.province.pst unless new_customer.province.pst.nil?
+    new_order.hst_rate = new_customer.province.hst unless new_customer.province.hst.nil?
+
+    # Create line items for each of the
+    @cart_products.each do |product|
+      new_line_item = LineItem.new(:quantity => quantity,
+                                   :price    => product.price)
+
+      total_price += product.price
+
+      new_line_item.product = product
+      new_line_item.save
+    end
+
+    total_price += total_price * new_customer.province.gst unless new_customer.province.gst.nil?
+    total_price += total_price * new_customer.province.pst unless new_customer.province.pst.nil?
+    total_price += total_price * new_customer.province.hst unless new_customer.province.hst.nil?
+
+    new_order.status = processing
+    new_order.order_total = total_price
+    new_order.save
 
     # Clear the sessions
     session[:checkout] = nil

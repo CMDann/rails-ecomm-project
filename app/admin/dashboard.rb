@@ -13,6 +13,7 @@ ActiveAdmin.register_page "Dashboard" do
         column :id
         column :created_at
         column :status
+        column :order_total
       end
       strong { link_to "View All Orders", admin_orders_path }
     end
