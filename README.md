@@ -3,6 +3,7 @@ Rails_Ecomm_Project
 <a href="https://coderwall.com/cmdann"><img alt="Endorse CMDann on Coderwall" src="https://api.coderwall.com/cmdann/endorsecount.png" /></a>
 
 <p>Ruby on Rails Final Project. Ecommerce Website. RRC BIT ECOMMERCE (RUBY)</p>
+<p>Final mark on this project was 124% out of 140% possible.</p>
 
 <p>Live version is deployed to heroku <a href="http://cmdann-rails-project.herokuapp.com/">here</a>. Although I am having issues deploying the app to Heroku using <a href="https://snap-ci.com">Snap-CI</a> due to both Ruby and Rails version on the Heroku end. Change log refelcts commits to the project broken down by day.</p>
 
